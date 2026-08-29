@@ -388,7 +388,7 @@
       "programs": [1]
     },
     {
-      "id": "D10", "slot": "aksam", "category": "et-kofte", "title": "Köfte veya dana eti ile renkli salata",
+      "id": "D10", "image": "images/D10.webp", "slot": "aksam", "category": "et-kofte", "title": "Köfte veya dana eti ile renkli salata",
       "lines": [
         "5 adet ızgara / fırın köfte (tanesi 30 g) veya 120 g az yağlı dana eti (1 yemek kaşığı zeytinyağı ile)",
         "Renkli salata: 4 yaprak marul + 1 orta boy havuç + 1 salatalık + 3 yemek kaşığı mısır + 1 yemek kaşığı zeytinyağı",
@@ -397,7 +397,7 @@
       "programs": [2]
     },
     {
-      "id": "D11", "slot": "aksam", "category": "et-kofte", "title": "Et sote, basmati pilav ve salata",
+      "id": "D11", "image": "images/D11.webp", "slot": "aksam", "category": "et-kofte", "title": "Et sote, basmati pilav ve salata",
       "lines": [
         "5-6 yemek kaşığı et sote (120 g az yağlı dana eti)",
         "3 yemek kaşığı basmati pirinç pilavı",
@@ -407,7 +407,7 @@
       "programs": [3]
     },
     {
-      "id": "D12", "slot": "aksam", "category": "et-kofte", "title": "Köfte veya dana eti, kinoa ve yoğurtlu brokoli",
+      "id": "D12", "image": "images/D12.webp", "slot": "aksam", "category": "et-kofte", "title": "Köfte veya dana eti, kinoa ve yoğurtlu brokoli",
       "lines": [
         "5 adet yumurta büyüklüğünde köfte (tanesi 30 g) veya 120 g az yağlı dana eti (1 yemek kaşığı zeytinyağı ile)",
         "3 yemek kaşığı haşlanmış kinoa",
@@ -416,7 +416,7 @@
       "programs": [4]
     },
     {
-      "id": "D13", "slot": "aksam", "category": "balik", "title": "Fırın somon, tatlı patates ve kapya",
+      "id": "D13", "image": "images/D13.webp", "slot": "aksam", "category": "balik", "title": "Fırın somon, tatlı patates ve kapya",
       "lines": [
         "200 g somon + 1 adet kabak + ½ orta boy tatlı patates + 1 adet kapya biber",
         "1-2 yemek kaşığı zeytinyağı ile fırınlanacak",
@@ -425,7 +425,7 @@
       "programs": [1, 2]
     },
     {
-      "id": "D14", "slot": "aksam", "category": "balik", "title": "Fırın somon, patates ve kapya",
+      "id": "D14", "image": "images/D14.webp", "slot": "aksam", "category": "balik", "title": "Fırın somon, patates ve kapya",
       "lines": [
         "200 g somon + 1 adet kabak + 1 küçük boy patates + 1 adet kapya biber",
         "2 yemek kaşığı zeytinyağı ile fırınlanacak"
@@ -433,7 +433,7 @@
       "programs": [3]
     },
     {
-      "id": "D15", "slot": "aksam", "category": "balik", "title": "Fırın somon ve tatlı patates",
+      "id": "D15", "image": "images/D15.webp", "slot": "aksam", "category": "balik", "title": "Fırın somon ve tatlı patates",
       "lines": [
         "200 g somon + 1 adet kabak + ½ orta boy tatlı patates",
         "2 yemek kaşığı zeytinyağı ile fırınlanacak",
@@ -442,7 +442,7 @@
       "programs": [4]
     },
     {
-      "id": "D16", "slot": "aksam", "category": "sebze-bakliyat", "title": "Zeytinyağlı taze fasulye ve pilav",
+      "id": "D16", "image": "images/D16.webp", "slot": "aksam", "category": "sebze-bakliyat", "title": "Zeytinyağlı taze fasulye ve pilav",
       "lines": [
         "10 yemek kaşığı zeytinyağlı taze fasulye",
         "3 yemek kaşığı basmati pirinç pilavı",
@@ -451,12 +451,12 @@
       "programs": [1, 4]
     },
     {
-      "id": "D17", "slot": "aksam", "category": "sebze-bakliyat", "title": "Yeşil mercimek salatası",
+      "id": "D17", "image": "images/D17.webp", "slot": "aksam", "category": "sebze-bakliyat", "title": "Yeşil mercimek salatası",
       "lines": ["Tarif kartına bak"],
       "maxPerWeek": 2, "recipe": "recipes/yesil-mercimek-salatasi.jpg", "programs": [1]
     },
     {
-      "id": "D18", "slot": "aksam", "category": "sebze-bakliyat", "title": "Bezelye yemeği ve bulgur pilavı",
+      "id": "D18", "image": "images/D18.webp", "slot": "aksam", "category": "sebze-bakliyat", "title": "Bezelye yemeği ve bulgur pilavı",
       "lines": [
         "10 yemek kaşığı bezelye yemeği (az patates + havuç, 1 yemek kaşığı zeytinyağı ile)",
         "4 yemek kaşığı bulgur pilavı",
@@ -465,7 +465,7 @@
       "programs": [2]
     },
     {
-      "id": "D19", "slot": "aksam", "category": "sebze-bakliyat", "title": "Çıtır nohut salatası",
+      "id": "D19", "image": "images/D19.webp", "slot": "aksam", "category": "sebze-bakliyat", "title": "Çıtır nohut salatası",
       "lines": ["Tarif kartına bak"],
       "maxPerWeek": 2, "recipe": "recipes/citir-nohut-salatasi.jpg", "programs": [2]
     },
