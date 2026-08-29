@@ -262,17 +262,17 @@
       "programs": [2]
     },
     {
-      "id": "T16", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Muz veya şeftali ile tahin",
+      "id": "T16", "image": "images/T16.webp", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Muz veya şeftali ile tahin",
       "lines": ["1 adet orta boy muz veya şeftali", "1 silme yemek kaşığı tahin veya fıstık ezmesi", "Tarçın"],
       "programs": [3, 4]
     },
     {
-      "id": "T17", "slot": "ara1", "category": "meyve-kuruyemis", "title": "İncir ve tahin",
+      "id": "T17", "image": "images/T17.webp", "slot": "ara1", "category": "meyve-kuruyemis", "title": "İncir ve tahin",
       "lines": ["2 adet orta boy incir", "1 silme yemek kaşığı tahin"],
       "programs": [3]
     },
     {
-      "id": "T18", "slot": "ara1", "category": "pratik", "title": "Labne ve hindi füme sandviç",
+      "id": "T18", "image": "images/T18.webp", "slot": "ara1", "category": "pratik", "title": "Labne ve hindi füme sandviç",
       "lines": [
         "2 wasa / 2 karabuğday patlağı (veya 2 ince dilim tam buğday ekmeği) arasına",
         "1 yemek kaşığı dolusu labne + 1 adet hindi füme",
@@ -282,37 +282,37 @@
       "tags": ["sandwichSnack"], "programs": [1, 2, 3, 4]
     },
     {
-      "id": "T19", "slot": "ara1", "category": "pratik", "title": "Protein bar ve ayran",
+      "id": "T19", "image": "images/T19.webp", "slot": "ara1", "category": "pratik", "title": "Protein bar ve ayran",
       "lines": ["1 adet protein bar (en az 15 g protein)", "1 küçük kutu ayran (3. programda ayransız)"],
       "programs": [1, 3]
     },
     {
-      "id": "T20", "slot": "ara1", "category": "pratik", "title": "Ayran, diyet bisküvi ve badem",
+      "id": "T20", "image": "images/T20.webp", "slot": "ara1", "category": "pratik", "title": "Ayran, diyet bisküvi ve badem",
       "lines": ["1 su bardağı ayran", "½ paket Altınbaşak diyet bisküvi", "10 adet badem"],
       "programs": [2]
     },
     {
-      "id": "T21", "slot": "ara1", "category": "pratik", "title": "Ayran, leblebi ve fındık",
+      "id": "T21", "image": "images/T21.webp", "slot": "ara1", "category": "pratik", "title": "Ayran, leblebi ve fındık",
       "lines": ["1 bardak ayran", "1 küçük çay bardağı leblebi", "10 adet fındık (3. programda fındıksız)"],
       "programs": [3, 4]
     },
     {
-      "id": "T22", "slot": "ara1", "category": "tatli", "title": "Dondurma",
+      "id": "T22", "image": "images/T22.webp", "slot": "ara1", "category": "tatli", "title": "Dondurma",
       "lines": ["2 top kornetsiz dondurma"],
       "programs": [1, 2, 4]
     },
     {
-      "id": "T23", "slot": "ara1", "category": "tatli", "title": "Muzlu fit magnolya",
+      "id": "T23", "image": "images/T23.webp", "slot": "ara1", "category": "tatli", "title": "Muzlu fit magnolya",
       "lines": ["1 adet tüketilecek", "Tarif kartına bak"],
       "recipe": "recipes/muzlu-fit-magnolya.jpg", "programs": [1]
     },
     {
-      "id": "T24", "slot": "ara1", "category": "tatli", "title": "Çilekli çikolatalı brownie",
+      "id": "T24", "image": "images/T24.webp", "slot": "ara1", "category": "tatli", "title": "Çilekli çikolatalı brownie",
       "lines": ["2 dilim brownie", "1 fincan Türk kahvesi veya filtre kahve", "Tarif kartına bak"],
       "recipe": "recipes/cilekli-cikolatali-brownie.jpg", "programs": [2]
     },
     {
-      "id": "T25", "slot": "ara1", "category": "tatli", "title": "Orman meyveli çikolatalı fit cup",
+      "id": "T25", "image": "images/T25.webp", "slot": "ara1", "category": "tatli", "title": "Orman meyveli çikolatalı fit cup",
       "lines": ["1 kase (frambuazlı chia puding yerine)", "Tarif kartına bak"],
       "recipe": "recipes/orman-meyveli-fit-cup.jpg", "programs": [3]
     },
