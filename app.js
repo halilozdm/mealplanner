@@ -200,21 +200,24 @@ function bindNav() {
   });
 }
 
-/** Meal card markup shared by the day wizard and the recipe browser. */
+/** Meal card markup shared by the day wizard and the recipe browser (layout C: tall photo row). */
 function mealCard(m, i, { selected = false, use = '', hint = null } = {}) {
   const isOpen = openMeal === m.id;
-  const lines = m.lines.map((l, k) => `<li class="${k >= 2 && !isOpen ? 'hidden' : ''}">${esc(l)}</li>`).join('');
-  const more = m.lines.length > 2 ? `<span class="more" data-more="${m.id}">${isOpen ? 'Daha az' : `+${m.lines.length - 2} satır`} ${icon('down')}</span>` : '<span></span>';
-  const visual = m.image ? `<img class="thumb" src="${esc(m.image)}" alt="" loading="lazy" width="84" height="84">` : `<div class="tile">${esc(m.id)}</div>`;
+  const visual = m.image ? `<img class="photo" src="${esc(m.image)}" alt="" loading="lazy">` : `<div class="photo tile">${esc(m.id)}</div>`;
+  const detail = isOpen
+    ? `<ul class="desc">${m.lines.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>`
+    : `<p class="sum">${esc(m.lines.join(' · '))}</p>`;
+  const more = `<span class="more" data-more="${m.id}">${isOpen ? 'Daha az' : `+${m.lines.length} satır`} ${icon('down')}</span>`;
   return `<button class="meal rise ${selected ? 'sel' : ''} ${isOpen ? 'open' : ''}" data-id="${m.id}" style="--i:${Math.min(i, 8)}">
     ${visual}
-    <div class="body">
-      <div class="head"><span class="title">${esc(m.title)}</span>${use}</div>
-      <ul class="desc">${lines}</ul>
-    </div>
     ${selected ? `<span class="check">${icon('check')}</span>` : ''}
-    <div class="foot">${more}${m.recipe ? `<span class="tarif" data-recipe="${m.id}">${icon('book')} Tarif</span>` : ''}</div>
-    ${hint ? `<div class="warnline">${icon('warn')}<span>${esc(hint.text)}</span></div>` : ''}
+    <div class="body">
+      <div class="meta"><span class="id">${esc(m.id)}</span>${use}</div>
+      <div class="title">${esc(m.title)}</div>
+      ${detail}
+      ${hint ? `<div class="warnline">${icon('warn')}<span>${esc(hint.text)}</span></div>` : ''}
+      <div class="foot">${more}${m.recipe ? `<span class="tarif" data-recipe="${m.id}">${icon('book')} Tarif</span>` : ''}</div>
+    </div>
   </button>`;
 }
 
