@@ -1,0 +1,19 @@
+{
+  "dietitian": "",
+  "title": "Haftalık Menü",
+  "rules": [
+    "Güne büyük bir bardak su ile başla. Kahvaltıya kadar su ve şekersiz çay-kahve tüketilebilir.",
+    "1 litre suya 1 adet kabuk tarçın atıp gün içerisinde tüket.",
+    "Söğüş sebzede 1 orta boy domates yerine ½ orta boy havuç kullanılabilir.",
+    "Ara öğünlere ek olarak gün içinde 1 şişe sade maden suyu tüketilebilir.",
+    "Salatalara zeytinyağı ilavesi 1 tatlı kaşığını geçmemeli.",
+    "Kahvaltıda haftanın en az 4 günü yumurta tüket.",
+    "Haftanın 4-5 günü 30-45 dakika tempolu yürüyüş yap.",
+    "Öğün fotoğrafları ve sorular: hafta içi ve cumartesi 10.30-21.30 arası."
+  ],
+  "exchanges": [
+    "Karbonhidrat değişimi: 1 dilim ekmek = 1 kepçe çorba = 2 yemek kaşığı pilav = 2 yemek kaşığı makarna = ¼ lavaş = ¼ simit = 3-4 elma dilim fırın patates.",
+    "Yağ değişimi: 2 tam ceviz = 10 badem = 10 fındık = 1 yemek kaşığı kabak çekirdeği = 1 tatlı kaşığı tahin = 1 tatlı kaşığı %100 fıstık ezmesi."
+  ],
+  "checks": ["su", "yürüyüş"]
+}

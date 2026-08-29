@@ -1,0 +1,547 @@
+{
+  "slots": [
+    { "key": "kahvalti", "label": "Kahvaltı", "short": "Kahvaltı", "time": "12.00 - 13.00", "prefix": "K" },
+    { "key": "ara1", "label": "Ara öğün 1", "short": "Ara", "time": "14.30 - 15.30", "prefix": "T" },
+    { "key": "aksam", "label": "Akşam yemeği", "short": "Akşam", "time": "17.00 - 18.00", "prefix": "D" },
+    { "key": "ara2", "label": "Ara öğün 2", "short": "Gece", "time": "en geç 21.30", "prefix": "L" }
+  ],
+  "categories": {
+    "kahvalti": [
+      { "key": "yumurtali", "label": "Yumurtalı" },
+      { "key": "bowl", "label": "Bowl" },
+      { "key": "sandvic-durum", "label": "Sandviç & dürüm" }
+    ],
+    "ara1": [
+      { "key": "yogurtlu", "label": "Yoğurtlu" },
+      { "key": "latte", "label": "Latte ile" },
+      { "key": "meyve-kuruyemis", "label": "Meyve & kuruyemiş" },
+      { "key": "pratik", "label": "Sandviç & pratik" },
+      { "key": "tatli", "label": "Tatlı" }
+    ],
+    "aksam": [
+      { "key": "tavuk", "label": "Tavuk" },
+      { "key": "et-kofte", "label": "Et & köfte" },
+      { "key": "balik", "label": "Balık" },
+      { "key": "sebze-bakliyat", "label": "Sebze & bakliyat" }
+    ],
+    "ara2": [
+      { "key": "meyveli", "label": "Meyveli" },
+      { "key": "diger", "label": "Çikolata & leblebi" }
+    ]
+  },
+  "meals": [
+    {
+      "id": "K1", "slot": "kahvalti", "category": "yumurtali", "title": "Kahvaltı tabağı",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "2 adet haşlanmış yumurta veya 2 yumurtadan sade omlet",
+        "1 kibrit kutusu büyüklüğünde beyaz peynir",
+        "1 yemek kaşığı labne / 1 kare dilim kaşar / 2 parmak kalınlığında çeçil",
+        "2 adet hindi füme",
+        "5-6 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)",
+        "1 ince dilim tam buğday ekmeği / 2 wasa / 2 karabuğday patlağı"
+      ],
+      "tags": ["egg"], "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "K2", "slot": "kahvalti", "category": "yumurtali", "title": "Avokado & yumurta",
+      "lines": [
+        "2 wasa / 2 karabuğday patlağı / 1 ince dilim tam buğday ekmeği üzerine hazırlanacak",
+        "5-6 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)",
+        "Tarif kartına bak"
+      ],
+      "maxPerWeek": 2, "tags": ["egg"], "recipe": "recipes/avokado-yumurta.jpg", "programs": [1, 3]
+    },
+    {
+      "id": "K3", "slot": "kahvalti", "category": "yumurtali", "title": "Sebzeli omlet",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "2 yumurta + 1 tatlı kaşığı zeytinyağı + mantar / kabak / biber / domates / maydanoz-dereotu ile omlet",
+        "1 kibrit kutusu büyüklüğünde beyaz peynir",
+        "5-6 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)",
+        "1 ince dilim tam buğday ekmeği / 2 wasa / 2 karabuğday patlağı"
+      ],
+      "maxPerWeek": 2, "tags": ["egg"], "programs": [1]
+    },
+    {
+      "id": "K4", "slot": "kahvalti", "category": "yumurtali", "title": "Lor peynirli omlet",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "2 yumurta + 3 yemek kaşığı lor peyniri + 1 tatlı kaşığı zeytinyağı ile omlet (maydanoz, dereotu eklenebilir)",
+        "5-6 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)",
+        "1 ince dilim tam buğday ekmeği / 2 wasa / 2 karabuğday patlağı"
+      ],
+      "maxPerWeek": 2, "tags": ["egg"], "programs": [2, 4]
+    },
+    {
+      "id": "K5", "slot": "kahvalti", "category": "yumurtali", "title": "Keten tohumlu omlet",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "2 yumurta + 1 tatlı kaşığı zeytinyağı + 1 yemek kaşığı keten tohumu ile omlet",
+        "1 kibrit kutusu büyüklüğünde beyaz peynir",
+        "5-6 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)",
+        "1 ince dilim tam buğday ekmeği / 2 wasa"
+      ],
+      "maxPerWeek": 2, "tags": ["egg"], "programs": [3]
+    },
+    {
+      "id": "K6", "slot": "kahvalti", "category": "yumurtali", "title": "Sebzeli yulaf börek",
+      "lines": [
+        "2 kibrit kutusu büyüklüğünde beyaz peynir",
+        "5-6 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)",
+        "Tarif kartına bak"
+      ],
+      "tags": ["egg"], "recipe": "recipes/sebzeli-yulaf-borek.jpg", "programs": [2, 4]
+    },
+    {
+      "id": "K7", "slot": "kahvalti", "category": "bowl", "title": "Orman meyveli muzlu bowl",
+      "lines": [
+        "4 yemek kaşığı yoğurt içine 2 yemek kaşığı chia tohumu + 1 tatlı kaşığı bal, geceden buzdolabında dinlendir",
+        "Sabah üzerine ½ orta boy muz + 1 küçük su bardağı orman meyvesi",
+        "1 tatlı kaşığı tahin + 10 adet badem + çay kaşığı ucu tarçın"
+      ],
+      "maxPerWeek": 2, "tags": ["bowl"], "programs": [1]
+    },
+    {
+      "id": "K8", "slot": "kahvalti", "category": "bowl", "title": "Bağırsak dostu bowl",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "4 yemek kaşığı yoğurt içine 2 yemek kaşığı chia tohumu + 1 tatlı kaşığı bal, geceden dinlendir",
+        "Sabah üzerine 4 adet kayısı + 1 yemek kaşığı keten tohumu + 1 tatlı kaşığı tahin"
+      ],
+      "tags": ["bowl"], "programs": [2]
+    },
+    {
+      "id": "K9", "slot": "kahvalti", "category": "bowl", "title": "Tiramisu tadında yulaf bowl",
+      "lines": [
+        "5 yemek kaşığı yoğurt + 2 yemek kaşığı yulaf ezmesi + 2 yemek kaşığı chia + 1 shot kahve, en az 1 saat buzdolabında",
+        "Yemeden önce 1 orta boy muz ezilerek eklenir, üzerine kakao",
+        "Tarif kartına bak"
+      ],
+      "tags": ["bowl"], "recipe": "recipes/tiramisu-yulaf-bowl.jpg", "programs": [3]
+    },
+    {
+      "id": "K10", "slot": "kahvalti", "category": "bowl", "title": "Ödem atıcı ananas bowl",
+      "lines": [
+        "4 yemek kaşığı yoğurt içine 2 yemek kaşığı chia tohumu + 1 tatlı kaşığı bal, geceden buzdolabında bekletilecek",
+        "Sabah üzerine 2 parmak kalınlığında 1 halka dilim ananas doğranacak",
+        "1 tatlı kaşığı tahin + 2 adet ceviz + tarçın"
+      ],
+      "maxPerWeek": 2, "tags": ["bowl"], "programs": [4]
+    },
+    {
+      "id": "K11", "slot": "kahvalti", "category": "sandvic-durum", "title": "Kaşar & hindi füme sandviç",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "2 ince dilim tam buğday ekmeği arasına 2 adet kaşar peyniri + 2 adet hindi füme",
+        "İsteğe bağlı 1 tatlı kaşığı acuka veya salça",
+        "5 adet çekirdeksiz zeytin veya 1 tatlı kaşığı zeytin ezmesi",
+        "1 küçük domates + 1 yaprak marul"
+      ],
+      "programs": [1]
+    },
+    {
+      "id": "K12", "slot": "kahvalti", "category": "sandvic-durum", "title": "Tam buğday tost",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "2 ince dilim tam buğday ekmeği arasına 2 kare ince dilim kaşar + 2 adet hindi füme",
+        "İsteğe bağlı 1 tatlı kaşığı salça",
+        "5 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)"
+      ],
+      "programs": [2]
+    },
+    {
+      "id": "K13", "slot": "kahvalti", "category": "sandvic-durum", "title": "Chia tohumlu krep dürüm",
+      "lines": [
+        "İçine 1 yemek kaşığı dolusu labne + 2 adet hindi füme + 2 yaprak marul + domates, dürüm yap",
+        "Tarif kartına bak"
+      ],
+      "recipe": "recipes/chiali-krep-durum.jpg", "programs": [2]
+    },
+    {
+      "id": "K14", "slot": "kahvalti", "category": "sandvic-durum", "title": "Keten tohumlu krep dürüm",
+      "lines": [
+        "Siyah açık çay (şekersiz)",
+        "1 yemek kaşığı labne + 2 adet hindi füme + marul ile dürüm",
+        "Tarif kartına bak"
+      ],
+      "recipe": "recipes/keten-tohumlu-krep-durum.jpg", "programs": [4]
+    },
+    {
+      "id": "K15", "slot": "kahvalti", "category": "sandvic-durum", "title": "Tuzlu pankekler",
+      "lines": [
+        "1 silme yemek kaşığı labne",
+        "1 kibrit kutusu büyüklüğünde beyaz peynir",
+        "5-6 adet zeytin / 2 adet ceviz içi",
+        "Söğüş sebze (domates, salatalık, bol yeşillik)",
+        "Tarif kartına bak"
+      ],
+      "recipe": "recipes/tuzlu-pankek.jpg", "programs": [3]
+    },
+
+    {
+      "id": "T1", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, şeftali ve tohum",
+      "lines": ["4 yemek kaşığı yoğurt", "1 adet küçük boy şeftali", "1 yemek kaşığı keten veya chia tohumu"],
+      "programs": [1, 3]
+    },
+    {
+      "id": "T2", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, elma ve tahin",
+      "lines": ["4 yemek kaşığı yoğurt", "1 orta boy elma küp küp", "1 tatlı kaşığı tahin veya şekersiz fıstık ezmesi", "Tarçın"],
+      "programs": [1]
+    },
+    {
+      "id": "T3", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, chia, orman meyvesi ve ezme",
+      "lines": ["4 yemek kaşığı yoğurt", "1 yemek kaşığı chia tohumu", "1 su bardağı orman meyvesi", "1 tatlı kaşığı fıstık ezmesi veya tahin"],
+      "programs": [2]
+    },
+    {
+      "id": "T4", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, chia ve orman meyvesi",
+      "lines": ["4 yemek kaşığı yoğurt", "1 yemek kaşığı chia tohumu", "1 avuç orman meyvesi"],
+      "programs": [4]
+    },
+    {
+      "id": "T5", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, keten tohumu ve incir",
+      "lines": ["4 yemek kaşığı yoğurt", "1 yemek kaşığı keten tohumu", "2 adet küçük boy incir"],
+      "programs": [4]
+    },
+    {
+      "id": "T6", "slot": "ara1", "category": "latte", "title": "Latte, patlak ve fıstık ezmeli muz",
+      "lines": ["1 fincan latte", "1 karabuğday patlağı veya wasa üzerine 1 tatlı kaşığı şekersiz fıstık ezmesi", "½ orta boy muz", "Tarçın"],
+      "programs": [1, 2]
+    },
+    {
+      "id": "T7", "slot": "ara1", "category": "latte", "title": "Latte, kayısı ve ceviz",
+      "lines": ["1 fincan latte", "4 adet kayısı", "2 adet ceviz"],
+      "programs": [1]
+    },
+    {
+      "id": "T8", "slot": "ara1", "category": "latte", "title": "Latte, şeftali ve tahin",
+      "lines": ["1 fincan latte", "1 adet küçük boy şeftali", "1 tatlı kaşığı tahin"],
+      "programs": [2]
+    },
+    {
+      "id": "T9", "slot": "ara1", "category": "latte", "title": "Latte, bitter çikolata ve badem",
+      "lines": ["1 fincan latte", "1 kare bitter çikolata", "10 adet badem"],
+      "programs": [3]
+    },
+    {
+      "id": "T10", "slot": "ara1", "category": "latte", "title": "Latte ve elma",
+      "lines": ["1 fincan latte", "1 adet küçük boy elma"],
+      "programs": [3]
+    },
+    {
+      "id": "T11", "slot": "ara1", "category": "latte", "title": "Latte, mürdüm eriği ve kabak çekirdeği",
+      "lines": ["1 fincan latte", "2 adet mürdüm eriği", "2 yemek kaşığı kabak çekirdeği"],
+      "programs": [4]
+    },
+    {
+      "id": "T12", "slot": "ara1", "category": "latte", "title": "Latte, ananas ve ceviz",
+      "lines": ["1 fincan latte", "2 parmak kalınlığında 1 halka dilim ananas", "2 adet ceviz"],
+      "programs": [4]
+    },
+    {
+      "id": "T13", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Kiraz, çikolata, fındık ve badem",
+      "lines": ["10 adet kiraz", "2 kare çikolata", "10 adet fındık", "10 adet badem"],
+      "programs": [1]
+    },
+    {
+      "id": "T14", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Kiraz, badem ve fındık",
+      "lines": ["15 adet kiraz", "10 adet badem", "10 adet fındık"],
+      "programs": [2]
+    },
+    {
+      "id": "T15", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Hurma, çikolata, ceviz ve badem",
+      "lines": ["2 adet hurma", "2 kare çikolata", "2 adet ceviz", "10 adet badem"],
+      "programs": [2]
+    },
+    {
+      "id": "T16", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Muz veya şeftali ile tahin",
+      "lines": ["1 adet orta boy muz veya şeftali", "1 silme yemek kaşığı tahin veya fıstık ezmesi", "Tarçın"],
+      "programs": [3, 4]
+    },
+    {
+      "id": "T17", "slot": "ara1", "category": "meyve-kuruyemis", "title": "İncir ve tahin",
+      "lines": ["2 adet orta boy incir", "1 silme yemek kaşığı tahin"],
+      "programs": [3]
+    },
+    {
+      "id": "T18", "slot": "ara1", "category": "pratik", "title": "Labne ve hindi füme sandviç",
+      "lines": [
+        "2 wasa / 2 karabuğday patlağı (veya 2 ince dilim tam buğday ekmeği) arasına",
+        "1 yemek kaşığı dolusu labne + 1 adet hindi füme",
+        "2 dilim domates + 1 yaprak marul",
+        "Bowl veya smoothie yapılan günlerde tercih edilecek"
+      ],
+      "tags": ["sandwichSnack"], "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "T19", "slot": "ara1", "category": "pratik", "title": "Protein bar ve ayran",
+      "lines": ["1 adet protein bar (en az 15 g protein)", "1 küçük kutu ayran (3. programda ayransız)"],
+      "programs": [1, 3]
+    },
+    {
+      "id": "T20", "slot": "ara1", "category": "pratik", "title": "Ayran, diyet bisküvi ve badem",
+      "lines": ["1 su bardağı ayran", "½ paket Altınbaşak diyet bisküvi", "10 adet badem"],
+      "programs": [2]
+    },
+    {
+      "id": "T21", "slot": "ara1", "category": "pratik", "title": "Ayran, leblebi ve fındık",
+      "lines": ["1 bardak ayran", "1 küçük çay bardağı leblebi", "10 adet fındık (3. programda fındıksız)"],
+      "programs": [3, 4]
+    },
+    {
+      "id": "T22", "slot": "ara1", "category": "tatli", "title": "Dondurma",
+      "lines": ["2 top kornetsiz dondurma"],
+      "programs": [1, 2, 4]
+    },
+    {
+      "id": "T23", "slot": "ara1", "category": "tatli", "title": "Muzlu fit magnolya",
+      "lines": ["1 adet tüketilecek", "Tarif kartına bak"],
+      "recipe": "recipes/muzlu-fit-magnolya.jpg", "programs": [1]
+    },
+    {
+      "id": "T24", "slot": "ara1", "category": "tatli", "title": "Çilekli çikolatalı brownie",
+      "lines": ["2 dilim brownie", "1 fincan Türk kahvesi veya filtre kahve", "Tarif kartına bak"],
+      "recipe": "recipes/cilekli-cikolatali-brownie.jpg", "programs": [2]
+    },
+    {
+      "id": "T25", "slot": "ara1", "category": "tatli", "title": "Orman meyveli çikolatalı fit cup",
+      "lines": ["1 kase (frambuazlı chia puding yerine)", "Tarif kartına bak"],
+      "recipe": "recipes/orman-meyveli-fit-cup.jpg", "programs": [3]
+    },
+    {
+      "id": "T26", "slot": "ara1", "category": "tatli", "title": "Snickers tadında hurmalar",
+      "lines": ["2 adet tüketilecek", "Tarif kartına bak"],
+      "recipe": "recipes/snickers-hurma.jpg", "programs": [3]
+    },
+
+    {
+      "id": "D1", "slot": "aksam", "category": "tavuk", "title": "Izgara tavuklu salata",
+      "lines": ["250 g tavuk göğsü ile hazırlanacak", "1 küçük bardak ayran", "Tarif kartına bak"],
+      "recipe": "recipes/izgara-tavuklu-salata.jpg", "programs": [1]
+    },
+    {
+      "id": "D2", "slot": "aksam", "category": "tavuk", "title": "Kruton ekmekli tavuk bowl",
+      "lines": ["200 g tavuk göğsü ile hazırlanacak", "Tarif kartına bak"],
+      "recipe": "recipes/kruton-ekmekli-tavuk-bowl.jpg", "programs": [2]
+    },
+    {
+      "id": "D3", "slot": "aksam", "category": "tavuk", "title": "Tavuklu fresh salata",
+      "lines": ["200 g tavuk göğsü ile hazırlanacak", "Tarif kartına bak"],
+      "recipe": "recipes/tavuklu-fresh-salata.jpg", "programs": [3]
+    },
+    {
+      "id": "D4", "slot": "aksam", "category": "tavuk", "title": "Mantarlı tavuk bowl",
+      "lines": ["200 g tavuk göğsü ile hazırlanacak", "Tarif kartına bak"],
+      "recipe": "recipes/mantarli-tavuk-bowl.jpg", "programs": [4]
+    },
+    {
+      "id": "D5", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk pirzola, çorba ve yoğurtlu brokoli",
+      "lines": [
+        "1 küçük kepçe çorba / 1 dilim ekmek",
+        "2 adet büyük boy fırın tavuk pirzola, yağlı ve derili yerleri alınmış",
+        "Yoğurtlu brokoli: 4 yemek kaşığı yoğurt + 8-10 çiçek haşlanmış brokoli + 1 tatlı kaşığı zeytinyağı + tuz + pul biber"
+      ],
+      "programs": [1]
+    },
+    {
+      "id": "D6", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk pirzola, çorba ve cacık",
+      "lines": [
+        "1 kepçe çorba / 1 dilim ekmek",
+        "2 adet büyük boy fırın tavuk pirzola, yağlı ve derili yerleri alınmış",
+        "Cacık: 4 yemek kaşığı yoğurt + 2 adet salatalık"
+      ],
+      "programs": [3]
+    },
+    {
+      "id": "D7", "slot": "aksam", "category": "tavuk", "title": "Fırın kanat ve renkli salata",
+      "lines": [
+        "6 adet küçük boy fırın kanat",
+        "Renkli salata: 4 yaprak marul + 1 orta boy havuç + 1 salatalık + 3 yemek kaşığı mısır + 1 yemek kaşığı zeytinyağı",
+        "1 su bardağı ayran"
+      ],
+      "programs": [2]
+    },
+    {
+      "id": "D8", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk baget, kinoa ve yoğurtlu brokoli",
+      "lines": [
+        "2 adet büyük boy fırın tavuk baget, yağlı ve derili yerleri alınmış",
+        "3 yemek kaşığı haşlanmış kinoa",
+        "Yoğurtlu brokoli: 4 yemek kaşığı yoğurt + 8-10 çiçek haşlanmış brokoli + 1 tatlı kaşığı zeytinyağı + tuz + pul biber"
+      ],
+      "programs": [4]
+    },
+    {
+      "id": "D9", "slot": "aksam", "category": "et-kofte", "title": "Dana sote, çorba ve yoğurtlu brokoli",
+      "lines": [
+        "1 küçük kepçe çorba / 1 ince dilim tam buğday ekmeği",
+        "120 g az yağlı dana eti ile sote (1 yemek kaşığı zeytinyağı ile)",
+        "Yoğurtlu brokoli: 4 yemek kaşığı yoğurt + 8-10 çiçek haşlanmış brokoli + 1 tatlı kaşığı zeytinyağı + tuz + pul biber"
+      ],
+      "programs": [1]
+    },
+    {
+      "id": "D10", "slot": "aksam", "category": "et-kofte", "title": "Köfte veya dana eti ile renkli salata",
+      "lines": [
+        "5 adet ızgara / fırın köfte (tanesi 30 g) veya 120 g az yağlı dana eti (1 yemek kaşığı zeytinyağı ile)",
+        "Renkli salata: 4 yaprak marul + 1 orta boy havuç + 1 salatalık + 3 yemek kaşığı mısır + 1 yemek kaşığı zeytinyağı",
+        "1 su bardağı ayran"
+      ],
+      "programs": [2]
+    },
+    {
+      "id": "D11", "slot": "aksam", "category": "et-kofte", "title": "Et sote, basmati pilav ve salata",
+      "lines": [
+        "5-6 yemek kaşığı et sote (120 g az yağlı dana eti)",
+        "3 yemek kaşığı basmati pirinç pilavı",
+        "Salata: 4 yaprak marul + 1 salatalık + 1 küçük rendelenmiş havuç + 1 tatlı kaşığı zeytinyağı",
+        "1 küçük su bardağı ayran"
+      ],
+      "programs": [3]
+    },
+    {
+      "id": "D12", "slot": "aksam", "category": "et-kofte", "title": "Köfte veya dana eti, kinoa ve yoğurtlu brokoli",
+      "lines": [
+        "5 adet yumurta büyüklüğünde köfte (tanesi 30 g) veya 120 g az yağlı dana eti (1 yemek kaşığı zeytinyağı ile)",
+        "3 yemek kaşığı haşlanmış kinoa",
+        "Yoğurtlu brokoli: 4 yemek kaşığı yoğurt + 8-10 çiçek haşlanmış brokoli + 1 tatlı kaşığı zeytinyağı + tuz + pul biber"
+      ],
+      "programs": [4]
+    },
+    {
+      "id": "D13", "slot": "aksam", "category": "balik", "title": "Fırın somon, tatlı patates ve kapya",
+      "lines": [
+        "200 g somon + 1 adet kabak + ½ orta boy tatlı patates + 1 adet kapya biber",
+        "1-2 yemek kaşığı zeytinyağı ile fırınlanacak",
+        "Tatlı patates yoksa 1 küçük boy patates"
+      ],
+      "programs": [1, 2]
+    },
+    {
+      "id": "D14", "slot": "aksam", "category": "balik", "title": "Fırın somon, patates ve kapya",
+      "lines": [
+        "200 g somon + 1 adet kabak + 1 küçük boy patates + 1 adet kapya biber",
+        "2 yemek kaşığı zeytinyağı ile fırınlanacak"
+      ],
+      "programs": [3]
+    },
+    {
+      "id": "D15", "slot": "aksam", "category": "balik", "title": "Fırın somon ve tatlı patates",
+      "lines": [
+        "200 g somon + 1 adet kabak + ½ orta boy tatlı patates",
+        "2 yemek kaşığı zeytinyağı ile fırınlanacak",
+        "Tatlı patates yoksa 1 küçük boy patates"
+      ],
+      "programs": [4]
+    },
+    {
+      "id": "D16", "slot": "aksam", "category": "sebze-bakliyat", "title": "Zeytinyağlı taze fasulye ve pilav",
+      "lines": [
+        "10 yemek kaşığı zeytinyağlı taze fasulye",
+        "3 yemek kaşığı basmati pirinç pilavı",
+        "Cacık: 4 yemek kaşığı yoğurt + 2 adet salatalık (veya 4 yemek kaşığı yoğurt + bol yeşillikli salata, 1 tatlı kaşığı zeytinyağı)"
+      ],
+      "programs": [1, 4]
+    },
+    {
+      "id": "D17", "slot": "aksam", "category": "sebze-bakliyat", "title": "Yeşil mercimek salatası",
+      "lines": ["Tarif kartına bak"],
+      "maxPerWeek": 2, "recipe": "recipes/yesil-mercimek-salatasi.jpg", "programs": [1]
+    },
+    {
+      "id": "D18", "slot": "aksam", "category": "sebze-bakliyat", "title": "Bezelye yemeği ve bulgur pilavı",
+      "lines": [
+        "10 yemek kaşığı bezelye yemeği (az patates + havuç, 1 yemek kaşığı zeytinyağı ile)",
+        "4 yemek kaşığı bulgur pilavı",
+        "Cacık: 4 yemek kaşığı yoğurt + 2 adet salatalık"
+      ],
+      "programs": [2]
+    },
+    {
+      "id": "D19", "slot": "aksam", "category": "sebze-bakliyat", "title": "Çıtır nohut salatası",
+      "lines": ["Tarif kartına bak"],
+      "maxPerWeek": 2, "recipe": "recipes/citir-nohut-salatasi.jpg", "programs": [2]
+    },
+    {
+      "id": "D20", "slot": "aksam", "category": "sebze-bakliyat", "title": "Zeytinyağlı bamya ve bulgur pilavı",
+      "lines": [
+        "10 yemek kaşığı zeytinyağlı bamya yemeği (2 yemek kaşığı zeytinyağı ile)",
+        "4 yemek kaşığı bulgur pilavı",
+        "Cacık: 4 yemek kaşığı yoğurt + 2 adet salatalık"
+      ],
+      "programs": [3]
+    },
+    {
+      "id": "D21", "slot": "aksam", "category": "sebze-bakliyat", "title": "Detoks çorba",
+      "lines": [
+        "4 yemek kaşığı yoğurt + 1 su bardağı haşlanmış nohut + 2 küp küp salatalık + 3 yemek kaşığı mısır + 1 yemek kaşığı zeytinyağı + tuz + pul biber",
+        "İçilecek kıvama gelene kadar su ile",
+        "Bol yeşillikli salata (1 tatlı kaşığı zeytinyağı ile)"
+      ],
+      "maxPerWeek": 2, "programs": [3]
+    },
+    {
+      "id": "D22", "slot": "aksam", "category": "sebze-bakliyat", "title": "Köz patlıcanlı çıtır nohut",
+      "lines": ["Bol yeşillikli salata (1 tatlı kaşığı zeytinyağı + limon)", "Tarif kartına bak"],
+      "maxPerWeek": 2, "recipe": "recipes/koz-patlicanli-citir-nohut.jpg", "programs": [4]
+    },
+
+    {
+      "id": "L1", "slot": "ara2", "category": "diger", "title": "Bitter çikolata ve kabak çekirdeği",
+      "lines": ["1 kare bitter çikolata", "2 yemek kaşığı kabak çekirdeği"],
+      "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "L2", "slot": "ara2", "category": "meyveli", "title": "Çilek ve ceviz",
+      "lines": ["8 adet çilek", "2 adet ceviz"],
+      "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "L3", "slot": "ara2", "category": "meyveli", "title": "Ananas ve badem",
+      "lines": ["2 parmak kalınlığında 1 halka dilim ananas", "10 adet badem"],
+      "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "L4", "slot": "ara2", "category": "meyveli", "title": "Muz ve fıstık ezmesi",
+      "lines": ["½ adet orta boy muz", "1 tatlı kaşığı fıstık ezmesi"],
+      "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "L5", "slot": "ara2", "category": "meyveli", "title": "Hurma ve ceviz",
+      "lines": ["2 adet hurma", "2 adet ceviz"],
+      "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "L6", "slot": "ara2", "category": "meyveli", "title": "Kayısı ve kabak çekirdeği",
+      "lines": ["2 adet kayısı", "2 yemek kaşığı kabak çekirdeği"],
+      "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "L7", "slot": "ara2", "category": "meyveli", "title": "Karpuz ve fındık",
+      "lines": ["2 küçük üçgen dilim karpuz", "10 adet fındık"],
+      "programs": [1, 2, 3]
+    },
+    {
+      "id": "L8", "slot": "ara2", "category": "meyveli", "title": "Elma ve tahin",
+      "lines": ["1 adet küçük boy elma", "1 tatlı kaşığı tahin"],
+      "programs": [1, 2, 3, 4]
+    },
+    {
+      "id": "L9", "slot": "ara2", "category": "meyveli", "title": "İncir ve tahin",
+      "lines": ["2 adet küçük boy incir", "1 tatlı kaşığı tahin"],
+      "programs": [4]
+    },
+    {
+      "id": "L10", "slot": "ara2", "category": "diger", "title": "Leblebi ve kabak çekirdeği",
+      "lines": ["1 çay bardağı leblebi", "1 yemek kaşığı kabak çekirdeği"],
+      "programs": [1, 2, 3, 4]
+    }
+  ]
+}
