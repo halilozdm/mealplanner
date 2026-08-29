@@ -317,33 +317,33 @@
       "recipe": "recipes/orman-meyveli-fit-cup.jpg", "programs": [3]
     },
     {
-      "id": "T26", "slot": "ara1", "category": "tatli", "title": "Snickers tadında hurmalar",
+      "id": "T26", "image": "images/T26.webp", "slot": "ara1", "category": "tatli", "title": "Snickers tadında hurmalar",
       "lines": ["2 adet tüketilecek", "Tarif kartına bak"],
       "recipe": "recipes/snickers-hurma.jpg", "programs": [3]
     },
 
     {
-      "id": "D1", "slot": "aksam", "category": "tavuk", "title": "Izgara tavuklu salata",
+      "id": "D1", "image": "images/D1.webp", "slot": "aksam", "category": "tavuk", "title": "Izgara tavuklu salata",
       "lines": ["250 g tavuk göğsü ile hazırlanacak", "1 küçük bardak ayran", "Tarif kartına bak"],
       "recipe": "recipes/izgara-tavuklu-salata.jpg", "programs": [1]
     },
     {
-      "id": "D2", "slot": "aksam", "category": "tavuk", "title": "Kruton ekmekli tavuk bowl",
+      "id": "D2", "image": "images/D2.webp", "slot": "aksam", "category": "tavuk", "title": "Kruton ekmekli tavuk bowl",
       "lines": ["200 g tavuk göğsü ile hazırlanacak", "Tarif kartına bak"],
       "recipe": "recipes/kruton-ekmekli-tavuk-bowl.jpg", "programs": [2]
     },
     {
-      "id": "D3", "slot": "aksam", "category": "tavuk", "title": "Tavuklu fresh salata",
+      "id": "D3", "image": "images/D3.webp", "slot": "aksam", "category": "tavuk", "title": "Tavuklu fresh salata",
       "lines": ["200 g tavuk göğsü ile hazırlanacak", "Tarif kartına bak"],
       "recipe": "recipes/tavuklu-fresh-salata.jpg", "programs": [3]
     },
     {
-      "id": "D4", "slot": "aksam", "category": "tavuk", "title": "Mantarlı tavuk bowl",
+      "id": "D4", "image": "images/D4.webp", "slot": "aksam", "category": "tavuk", "title": "Mantarlı tavuk bowl",
       "lines": ["200 g tavuk göğsü ile hazırlanacak", "Tarif kartına bak"],
       "recipe": "recipes/mantarli-tavuk-bowl.jpg", "programs": [4]
     },
     {
-      "id": "D5", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk pirzola, çorba ve yoğurtlu brokoli",
+      "id": "D5", "image": "images/D5.webp", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk pirzola, çorba ve yoğurtlu brokoli",
       "lines": [
         "1 küçük kepçe çorba / 1 dilim ekmek",
         "2 adet büyük boy fırın tavuk pirzola, yağlı ve derili yerleri alınmış",
@@ -352,7 +352,7 @@
       "programs": [1]
     },
     {
-      "id": "D6", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk pirzola, çorba ve cacık",
+      "id": "D6", "image": "images/D6.webp", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk pirzola, çorba ve cacık",
       "lines": [
         "1 kepçe çorba / 1 dilim ekmek",
         "2 adet büyük boy fırın tavuk pirzola, yağlı ve derili yerleri alınmış",
@@ -361,7 +361,7 @@
       "programs": [3]
     },
     {
-      "id": "D7", "slot": "aksam", "category": "tavuk", "title": "Fırın kanat ve renkli salata",
+      "id": "D7", "image": "images/D7.webp", "slot": "aksam", "category": "tavuk", "title": "Fırın kanat ve renkli salata",
       "lines": [
         "6 adet küçük boy fırın kanat",
         "Renkli salata: 4 yaprak marul + 1 orta boy havuç + 1 salatalık + 3 yemek kaşığı mısır + 1 yemek kaşığı zeytinyağı",
@@ -370,7 +370,7 @@
       "programs": [2]
     },
     {
-      "id": "D8", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk baget, kinoa ve yoğurtlu brokoli",
+      "id": "D8", "image": "images/D8.webp", "slot": "aksam", "category": "tavuk", "title": "Fırın tavuk baget, kinoa ve yoğurtlu brokoli",
       "lines": [
         "2 adet büyük boy fırın tavuk baget, yağlı ve derili yerleri alınmış",
         "3 yemek kaşığı haşlanmış kinoa",
@@ -379,7 +379,7 @@
       "programs": [4]
     },
     {
-      "id": "D9", "slot": "aksam", "category": "et-kofte", "title": "Dana sote, çorba ve yoğurtlu brokoli",
+      "id": "D9", "image": "images/D9.webp", "slot": "aksam", "category": "et-kofte", "title": "Dana sote, çorba ve yoğurtlu brokoli",
       "lines": [
         "1 küçük kepçe çorba / 1 ince dilim tam buğday ekmeği",
         "120 g az yağlı dana eti ile sote (1 yemek kaşığı zeytinyağı ile)",
