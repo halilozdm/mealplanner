@@ -212,52 +212,52 @@
       "programs": [4]
     },
     {
-      "id": "T6", "slot": "ara1", "category": "latte", "title": "Latte, patlak ve fıstık ezmeli muz",
+      "id": "T6", "image": "images/T6.webp", "slot": "ara1", "category": "latte", "title": "Latte, patlak ve fıstık ezmeli muz",
       "lines": ["1 fincan latte", "1 karabuğday patlağı veya wasa üzerine 1 tatlı kaşığı şekersiz fıstık ezmesi", "½ orta boy muz", "Tarçın"],
       "programs": [1, 2]
     },
     {
-      "id": "T7", "slot": "ara1", "category": "latte", "title": "Latte, kayısı ve ceviz",
+      "id": "T7", "image": "images/T7.webp", "slot": "ara1", "category": "latte", "title": "Latte, kayısı ve ceviz",
       "lines": ["1 fincan latte", "4 adet kayısı", "2 adet ceviz"],
       "programs": [1]
     },
     {
-      "id": "T8", "slot": "ara1", "category": "latte", "title": "Latte, şeftali ve tahin",
+      "id": "T8", "image": "images/T8.webp", "slot": "ara1", "category": "latte", "title": "Latte, şeftali ve tahin",
       "lines": ["1 fincan latte", "1 adet küçük boy şeftali", "1 tatlı kaşığı tahin"],
       "programs": [2]
     },
     {
-      "id": "T9", "slot": "ara1", "category": "latte", "title": "Latte, bitter çikolata ve badem",
+      "id": "T9", "image": "images/T9.webp", "slot": "ara1", "category": "latte", "title": "Latte, bitter çikolata ve badem",
       "lines": ["1 fincan latte", "1 kare bitter çikolata", "10 adet badem"],
       "programs": [3]
     },
     {
-      "id": "T10", "slot": "ara1", "category": "latte", "title": "Latte ve elma",
+      "id": "T10", "image": "images/T10.webp", "slot": "ara1", "category": "latte", "title": "Latte ve elma",
       "lines": ["1 fincan latte", "1 adet küçük boy elma"],
       "programs": [3]
     },
     {
-      "id": "T11", "slot": "ara1", "category": "latte", "title": "Latte, mürdüm eriği ve kabak çekirdeği",
+      "id": "T11", "image": "images/T11.webp", "slot": "ara1", "category": "latte", "title": "Latte, mürdüm eriği ve kabak çekirdeği",
       "lines": ["1 fincan latte", "2 adet mürdüm eriği", "2 yemek kaşığı kabak çekirdeği"],
       "programs": [4]
     },
     {
-      "id": "T12", "slot": "ara1", "category": "latte", "title": "Latte, ananas ve ceviz",
+      "id": "T12", "image": "images/T12.webp", "slot": "ara1", "category": "latte", "title": "Latte, ananas ve ceviz",
       "lines": ["1 fincan latte", "2 parmak kalınlığında 1 halka dilim ananas", "2 adet ceviz"],
       "programs": [4]
     },
     {
-      "id": "T13", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Kiraz, çikolata, fındık ve badem",
+      "id": "T13", "image": "images/T13.webp", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Kiraz, çikolata, fındık ve badem",
       "lines": ["10 adet kiraz", "2 kare çikolata", "10 adet fındık", "10 adet badem"],
       "programs": [1]
     },
     {
-      "id": "T14", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Kiraz, badem ve fındık",
+      "id": "T14", "image": "images/T14.webp", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Kiraz, badem ve fındık",
       "lines": ["15 adet kiraz", "10 adet badem", "10 adet fındık"],
       "programs": [2]
     },
     {
-      "id": "T15", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Hurma, çikolata, ceviz ve badem",
+      "id": "T15", "image": "images/T15.webp", "slot": "ara1", "category": "meyve-kuruyemis", "title": "Hurma, çikolata, ceviz ve badem",
       "lines": ["2 adet hurma", "2 kare çikolata", "2 adet ceviz", "10 adet badem"],
       "programs": [2]
     },
