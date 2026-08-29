@@ -4,7 +4,7 @@ import {
   hints, eggDayCount, encodePlan, decodePlan, randomizePlan,
 } from './planner.js';
 
-const VERSION = '8'; // bump when data/*.json changes, busts the fetch cache
+const VERSION = '9'; // bump when data/*.json changes, busts the fetch cache
 const LS_PLAN = 'mealplanner.plan';
 
 const app = document.getElementById('app');

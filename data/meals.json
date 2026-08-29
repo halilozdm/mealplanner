@@ -470,7 +470,7 @@
       "maxPerWeek": 2, "recipe": "recipes/citir-nohut-salatasi.jpg", "programs": [2]
     },
     {
-      "id": "D20", "slot": "aksam", "category": "sebze-bakliyat", "title": "Zeytinyağlı bamya ve bulgur pilavı",
+      "id": "D20", "image": "images/D20.webp", "slot": "aksam", "category": "sebze-bakliyat", "title": "Zeytinyağlı bamya ve bulgur pilavı",
       "lines": [
         "10 yemek kaşığı zeytinyağlı bamya yemeği (2 yemek kaşığı zeytinyağı ile)",
         "4 yemek kaşığı bulgur pilavı",
@@ -479,7 +479,7 @@
       "programs": [3]
     },
     {
-      "id": "D21", "slot": "aksam", "category": "sebze-bakliyat", "title": "Detoks çorba",
+      "id": "D21", "image": "images/D21.webp", "slot": "aksam", "category": "sebze-bakliyat", "title": "Detoks çorba",
       "lines": [
         "4 yemek kaşığı yoğurt + 1 su bardağı haşlanmış nohut + 2 küp küp salatalık + 3 yemek kaşığı mısır + 1 yemek kaşığı zeytinyağı + tuz + pul biber",
         "İçilecek kıvama gelene kadar su ile",
@@ -488,58 +488,58 @@
       "maxPerWeek": 2, "programs": [3]
     },
     {
-      "id": "D22", "slot": "aksam", "category": "sebze-bakliyat", "title": "Köz patlıcanlı çıtır nohut",
+      "id": "D22", "image": "images/D22.webp", "slot": "aksam", "category": "sebze-bakliyat", "title": "Köz patlıcanlı çıtır nohut",
       "lines": ["Bol yeşillikli salata (1 tatlı kaşığı zeytinyağı + limon)", "Tarif kartına bak"],
       "maxPerWeek": 2, "recipe": "recipes/koz-patlicanli-citir-nohut.jpg", "programs": [4]
     },
 
     {
-      "id": "L1", "slot": "ara2", "category": "diger", "title": "Bitter çikolata ve kabak çekirdeği",
+      "id": "L1", "image": "images/L1.webp", "slot": "ara2", "category": "diger", "title": "Bitter çikolata ve kabak çekirdeği",
       "lines": ["1 kare bitter çikolata", "2 yemek kaşığı kabak çekirdeği"],
       "programs": [1, 2, 3, 4]
     },
     {
-      "id": "L2", "slot": "ara2", "category": "meyveli", "title": "Çilek ve ceviz",
+      "id": "L2", "image": "images/L2.webp", "slot": "ara2", "category": "meyveli", "title": "Çilek ve ceviz",
       "lines": ["8 adet çilek", "2 adet ceviz"],
       "programs": [1, 2, 3, 4]
     },
     {
-      "id": "L3", "slot": "ara2", "category": "meyveli", "title": "Ananas ve badem",
+      "id": "L3", "image": "images/L3.webp", "slot": "ara2", "category": "meyveli", "title": "Ananas ve badem",
       "lines": ["2 parmak kalınlığında 1 halka dilim ananas", "10 adet badem"],
       "programs": [1, 2, 3, 4]
     },
     {
-      "id": "L4", "slot": "ara2", "category": "meyveli", "title": "Muz ve fıstık ezmesi",
+      "id": "L4", "image": "images/L4.webp", "slot": "ara2", "category": "meyveli", "title": "Muz ve fıstık ezmesi",
       "lines": ["½ adet orta boy muz", "1 tatlı kaşığı fıstık ezmesi"],
       "programs": [1, 2, 3, 4]
     },
     {
-      "id": "L5", "slot": "ara2", "category": "meyveli", "title": "Hurma ve ceviz",
+      "id": "L5", "image": "images/L5.webp", "slot": "ara2", "category": "meyveli", "title": "Hurma ve ceviz",
       "lines": ["2 adet hurma", "2 adet ceviz"],
       "programs": [1, 2, 3, 4]
     },
     {
-      "id": "L6", "slot": "ara2", "category": "meyveli", "title": "Kayısı ve kabak çekirdeği",
+      "id": "L6", "image": "images/L6.webp", "slot": "ara2", "category": "meyveli", "title": "Kayısı ve kabak çekirdeği",
       "lines": ["2 adet kayısı", "2 yemek kaşığı kabak çekirdeği"],
       "programs": [1, 2, 3, 4]
     },
     {
-      "id": "L7", "slot": "ara2", "category": "meyveli", "title": "Karpuz ve fındık",
+      "id": "L7", "image": "images/L7.webp", "slot": "ara2", "category": "meyveli", "title": "Karpuz ve fındık",
       "lines": ["2 küçük üçgen dilim karpuz", "10 adet fındık"],
       "programs": [1, 2, 3]
     },
     {
-      "id": "L8", "slot": "ara2", "category": "meyveli", "title": "Elma ve tahin",
+      "id": "L8", "image": "images/L8.webp", "slot": "ara2", "category": "meyveli", "title": "Elma ve tahin",
       "lines": ["1 adet küçük boy elma", "1 tatlı kaşığı tahin"],
       "programs": [1, 2, 3, 4]
     },
     {
-      "id": "L9", "slot": "ara2", "category": "meyveli", "title": "İncir ve tahin",
+      "id": "L9", "image": "images/L9.webp", "slot": "ara2", "category": "meyveli", "title": "İncir ve tahin",
       "lines": ["2 adet küçük boy incir", "1 tatlı kaşığı tahin"],
       "programs": [4]
     },
     {
-      "id": "L10", "slot": "ara2", "category": "diger", "title": "Leblebi ve kabak çekirdeği",
+      "id": "L10", "image": "images/L10.webp", "slot": "ara2", "category": "diger", "title": "Leblebi ve kabak çekirdeği",
       "lines": ["1 çay bardağı leblebi", "1 yemek kaşığı kabak çekirdeği"],
       "programs": [1, 2, 3, 4]
     }
