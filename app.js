@@ -1,12 +1,11 @@
 import {
-  SLOT_KEYS, DAY_NAMES, DAY_SHORT, toISODate, mondayOf, addDays, shortDate, weekLabel,
+  SLOT_KEYS, dayName, dayShort, toISODate, addDays, shortDate, weekLabel,
   newPlan, setMeal, clearPlan, withWeekStart, usageCount, filledCount, isValidPlan,
-  hints, eggDayCount, encodePlan, decodePlan,
+  hints, eggDayCount, encodePlan, decodePlan, randomizePlan,
 } from './planner.js';
 
 const VERSION = '1'; // bump when data/*.json changes, busts the fetch cache
 const LS_PLAN = 'mealplanner.plan';
-const LS_LAST = 'mealplanner.lastWeek';
 
 const app = document.getElementById('app');
 const toastEl = document.getElementById('toast');
@@ -14,6 +13,7 @@ const toastEl = document.getElementById('toast');
 let data, rules, byId;
 let plan;
 let chip = {}; // slot -> category key or 'all'
+let browseSlot = 'kahvalti'; // recipes view: active slot tab
 let openMeal = null; // expanded meal card id
 let menuOpen = false;
 
@@ -48,6 +48,7 @@ function route() {
   let m;
   if ((m = h.match(/^#\/day\/(\d)\/(kahvalti|ara1|aksam|ara2)$/))) return { view: 'day', dayIdx: +m[1], slot: m[2] };
   if ((m = h.match(/^#\/recipe\/([A-Z]\d+)$/))) return { view: 'recipe', id: m[1] };
+  if (h === '#/recipes') return { view: 'recipes' };
   return { view: 'home' };
 }
 
@@ -57,6 +58,7 @@ function render() {
   const r = route();
   if (r.view === 'day') renderDay(r.dayIdx, r.slot);
   else if (r.view === 'recipe') renderRecipe(r.id);
+  else if (r.view === 'recipes') renderRecipes();
   else renderHome();
   window.scrollTo(0, 0);
 }
@@ -76,7 +78,7 @@ function renderHome() {
     }).join('');
     const dots = SLOT_KEYS.map((s) => `<i class="${d[s] ? 'on' : ''}"></i>`).join('');
     return `<button class="day ${n === 4 ? 'done' : ''}" data-day="${i}">
-      <div><div class="dn">${esc(DAY_SHORT[i])}</div><div class="dd">${esc(shortDate(date))}</div></div>
+      <div><div class="dn">${esc(dayShort(plan.weekStart, i))}</div><div class="dd">${esc(shortDate(date))}</div></div>
       <div class="lines">${lines}</div>
       <div class="dots">${dots}</div>
     </button>`;
@@ -97,16 +99,17 @@ function renderHome() {
       ${hs.length ? `<div class="hints">${hs.map((h) => `<div class="hint ${h.level}">${esc(h.text)}</div>`).join('')}</div>` : ''}
     </main>
     <div class="bar">
-      <button class="btn primary" id="pdf" ${filled === 0 ? 'disabled' : ''}>⬇︎ PDF indir</button>
+      ${tabs('plan')}
+      <button class="btn primary" id="pdf" ${filled === 0 ? 'disabled' : ''}>⬇︎ PDF</button>
       <button class="btn" id="share" ${filled === 0 ? 'disabled' : ''}>Paylaş</button>
       <button class="btn icon" id="more" aria-label="Menü">⋯</button>
     </div>
     ${menuOpen ? `<div class="scrim" id="scrim"></div><div class="menu">
-      <button id="copyLast" ${load(LS_LAST) ? '' : 'disabled'}>Geçen haftayı kopyala</button>
-      <button id="nextWeek">Yeni hafta başlat (bu haftayı sakla)</button>
-      <button id="clear" class="danger">Bu haftayı temizle</button>
+      <button id="random">🎲 Rastgele doldur</button>
+      <button id="clear" class="danger">Haftayı temizle</button>
     </div>` : ''}
   `;
+  bindTabs();
 
   app.querySelectorAll('.day').forEach((b) => b.addEventListener('click', () => {
     const i = +b.dataset.day;
@@ -123,24 +126,79 @@ function renderHome() {
   app.querySelector('#share').addEventListener('click', onShare);
   app.querySelector('#more').addEventListener('click', () => { menuOpen = !menuOpen; render(); });
   app.querySelector('#scrim')?.addEventListener('click', () => { menuOpen = false; render(); });
-  app.querySelector('#copyLast')?.addEventListener('click', () => {
-    const last = load(LS_LAST);
-    if (isValidPlan(last)) {
-      setPlan({ ...plan, days: last.days.map((d) => ({ ...d })) });
-      toast('Geçen hafta kopyalandı');
+  app.querySelector('#random')?.addEventListener('click', () => {
+    if (filledCount(plan) === 0 || confirm('Mevcut öğünler rastgele yenileriyle değiştirilsin mi?')) {
+      setPlan(randomizePlan(plan, data.meals));
+      toast('Hafta rastgele dolduruldu');
     }
     menuOpen = false; render();
-  });
-  app.querySelector('#nextWeek')?.addEventListener('click', () => {
-    save(LS_LAST, plan);
-    setPlan(newPlan(addDays(plan.weekStart, 7)));
-    menuOpen = false; render();
-    toast('Yeni hafta');
   });
   app.querySelector('#clear')?.addEventListener('click', () => {
     if (confirm('Bu haftanın tüm öğünleri silinsin mi?')) setPlan(clearPlan(plan));
     menuOpen = false; render();
   });
+}
+
+// ---------- shared: bottom tabs + meal card ----------
+
+function tabs(active) {
+  return `<nav class="tabs">
+    <button class="tab ${active === 'plan' ? 'on' : ''}" data-go="#/">📅<span>Plan</span></button>
+    <button class="tab ${active === 'recipes' ? 'on' : ''}" data-go="#/recipes">📖<span>Tarifler</span></button>
+  </nav>`;
+}
+function bindTabs() {
+  app.querySelectorAll('.tab').forEach((b) => b.addEventListener('click', () => { location.hash = b.dataset.go; }));
+}
+
+/** Meal card markup shared by the day wizard and the recipe browser. */
+function mealCard(m, { selected = false, use = '', hint = null } = {}) {
+  const isOpen = openMeal === m.id;
+  const lines = m.lines.map((l, i) => `<li class="${i >= 2 && !isOpen ? 'hidden' : ''}">${esc(l)}</li>`).join('');
+  const more = m.lines.length > 2 && !isOpen ? `<li class="more" data-more="${m.id}">+${m.lines.length - 2} satır daha</li>` : '';
+  return `<button class="meal ${selected ? 'sel' : ''} ${isOpen ? 'open' : ''}" data-id="${m.id}">
+    <div class="head"><span class="id">${esc(m.id)}</span><span class="title">${esc(m.title)}</span>${use}</div>
+    ${m.recipe ? `<span class="tarif" data-recipe="${m.id}">Tarif</span>` : '<span></span>'}
+    <ul class="desc">${lines}${more}</ul>
+    ${hint ? `<div class="desc" style="color:var(--amber)">⚠ ${esc(hint.text)}</div>` : ''}
+  </button>`;
+}
+
+function renderRecipes() {
+  const cats = data.categories[browseSlot];
+  const cur = chip['browse:' + browseSlot] || 'all';
+  const list = data.meals.filter((m) => m.slot === browseSlot && (cur === 'all' || m.category === cur));
+
+  const slotTabs = SLOT_KEYS.map((s) => {
+    const sm = slotMeta(s);
+    const n = data.meals.filter((m) => m.slot === s).length;
+    return `<button class="step ${s === browseSlot ? 'cur' : ''}" data-slot="${s}"><span>${esc(sm.short)}</span><span class="t">${n} seçenek</span></button>`;
+  }).join('');
+  const chips = [`<button class="chip ${cur === 'all' ? 'on' : ''}" data-cat="all">Hepsi</button>`]
+    .concat(cats.map((c) => `<button class="chip ${cur === c.key ? 'on' : ''}" data-cat="${c.key}">${esc(c.label)}</button>`)).join('');
+
+  app.innerHTML = `
+    <header class="top">
+      <h1>Tarifler<span class="sub">${data.meals.length} öğün · ${esc(slotMeta(browseSlot).label)} ${esc(slotMeta(browseSlot).time)}</span></h1>
+    </header>
+    <main>
+      <div class="steps">${slotTabs}</div>
+      <div class="chips">${chips}</div>
+      <div class="meals">${list.map((m) => mealCard(m)).join('') || '<p class="empty-list">Bu kategoride öğün yok</p>'}</div>
+    </main>
+    <div class="bar bar-tabs">${tabs('recipes')}</div>
+  `;
+  bindTabs();
+  app.querySelectorAll('.step').forEach((b) => b.addEventListener('click', () => { browseSlot = b.dataset.slot; openMeal = null; render(); }));
+  app.querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => { chip['browse:' + browseSlot] = b.dataset.cat; render(); }));
+  app.querySelectorAll('.meal').forEach((b) => b.addEventListener('click', (e) => {
+    const t = e.target.closest('[data-recipe]');
+    if (t) { location.hash = `#/recipe/${t.dataset.recipe}`; return; }
+    const y = window.scrollY;
+    openMeal = openMeal === b.dataset.id ? null : b.dataset.id;
+    render();
+    window.scrollTo(0, y);
+  }));
 }
 
 function renderDay(dayIdx, slot) {
@@ -168,22 +226,14 @@ function renderDay(dayIdx, slot) {
     let use = '';
     if (m.maxPerWeek) use = `<span class="use ${n > m.maxPerWeek ? 'over' : ''}">${n}/${m.maxPerWeek}</span>`;
     else if (n > 0) use = `<span class="use info">${n}×</span>`;
-    const isOpen = openMeal === m.id;
-    const lines = m.lines.map((l, i) => `<li class="${i >= 2 && !isOpen ? 'hidden' : ''}">${esc(l)}</li>`).join('');
-    const more = m.lines.length > 2 && !isOpen ? `<li class="more" data-more="${m.id}">+${m.lines.length - 2} satır daha</li>` : '';
     const hint = hs.find((h) => h.mealId === m.id && (h.dayIdx === undefined || h.dayIdx === dayIdx));
-    return `<button class="meal ${selected === m.id ? 'sel' : ''} ${isOpen ? 'open' : ''}" data-id="${m.id}">
-      <div class="head"><span class="id">${esc(m.id)}</span><span class="title">${esc(m.title)}</span>${use}</div>
-      ${m.recipe ? `<span class="tarif" data-recipe="${m.id}">Tarif</span>` : '<span></span>'}
-      <ul class="desc">${lines}${more}</ul>
-      ${hint ? `<div class="desc" style="color:var(--amber)">⚠ ${esc(hint.text)}</div>` : ''}
-    </button>`;
+    return mealCard(m, { selected: selected === m.id, use, hint });
   }).join('');
 
   app.innerHTML = `
     <header class="top">
       <button class="back" id="back" aria-label="Geri">‹</button>
-      <h1>${esc(DAY_NAMES[dayIdx])} <span class="sub">${esc(shortDate(addDays(plan.weekStart, dayIdx)))} · ${esc(meta.label)} ${esc(meta.time)}</span></h1>
+      <h1>${esc(dayName(plan.weekStart, dayIdx))} <span class="sub">${esc(shortDate(addDays(plan.weekStart, dayIdx)))} · ${esc(meta.label)} ${esc(meta.time)}</span></h1>
     </header>
     <main>
       <div class="steps">${steps}</div>

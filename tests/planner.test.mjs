@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import {
   mondayOf, addDays, weekLabel, newPlan, setMeal, usageCount, filledCount,
   hints, eggDayCount, encodePlan, decodePlan, isValidPlan, SLOT_KEYS,
+  dayName, dayShort, randomizePlan,
 } from '../planner.js';
 
 const data = JSON.parse(readFileSync(new URL('../data/meals.json', import.meta.url), 'utf8'));
@@ -45,7 +46,7 @@ test('addDays and weekLabel', () => {
 
 test('newPlan + setMeal is immutable and counts', () => {
   const p0 = newPlan('2026-08-26');
-  assert.equal(p0.weekStart, '2026-08-24');
+  assert.equal(p0.weekStart, '2026-08-26', 'week may start on any weekday');
   assert.equal(filledCount(p0), 0);
   const p1 = setMeal(p0, 0, 'kahvalti', 'K1');
   assert.equal(p0.days[0].kahvalti, null);
@@ -111,4 +112,24 @@ test('encode/decode round trip', () => {
   assert.deepEqual(decodePlan(s), p);
   assert.equal(decodePlan('garbage!!'), null);
   assert.equal(decodePlan(''), null);
+});
+
+test('dayName follows the chosen start day', () => {
+  assert.equal(dayName('2026-08-24', 0), 'Pazartesi');
+  assert.equal(dayName('2026-08-26', 0), 'Çarşamba'); // Wednesday start
+  assert.equal(dayName('2026-08-26', 6), 'Salı');
+  assert.equal(dayShort('2026-08-30', 0), 'Paz');
+  assert.equal(dayShort('2026-08-30', 1), 'Pzt');
+});
+
+test('randomizePlan fills 28 slots with no warnings or rule hints', () => {
+  let seed = 42;
+  const rnd = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x80000000; };
+  for (let run = 0; run < 200; run++) {
+    const p = randomizePlan(newPlan('2026-08-26'), data.meals, rnd);
+    assert.ok(isValidPlan(p));
+    assert.equal(filledCount(p), 28);
+    assert.ok(eggDayCount(p, byId) >= 4);
+    assert.deepEqual(hints(p, byId), [], `run ${run}`);
+  }
 });

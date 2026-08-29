@@ -1,5 +1,5 @@
 // Generates the landscape A4 week grid with jsPDF + AutoTable.
-import { SLOT_KEYS, DAY_NAMES, addDays, shortDate, weekLabel } from './planner.js';
+import { SLOT_KEYS, dayName, addDays, shortDate, weekLabel } from './planner.js';
 
 const NAVY = [31, 59, 115];
 const GRAY = [110, 116, 133];
@@ -88,7 +88,7 @@ function buildDoc(jsPDF, fonts, plan, data, rules, fs) {
   const pad = 1.6;
   const cellW = dayCol - 2 * pad;
 
-  const head = [['Öğün', ...plan.days.map((_, i) => `${DAY_NAMES[i]}\n${shortDate(addDays(plan.weekStart, i))}`)]];
+  const head = [['Öğün', ...plan.days.map((_, i) => `${dayName(plan.weekStart, i)}\n${shortDate(addDays(plan.weekStart, i))}`)]];
   const body = SLOT_KEYS.map((slot) => [
     { kind: 'slot', meta: slotMeta(slot) },
     ...plan.days.map((d) => ({ kind: 'meal', meal: d[slot] ? byId.get(d[slot]) : null })),

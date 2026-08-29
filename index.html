@@ -97,6 +97,15 @@
   }
   .btn.primary { background: var(--navy); color: #fff; }
   .btn.icon { flex: 0 0 48px; font-size: 20px; }
+  .tabs { display: flex; gap: 4px; flex: 0 0 auto; }
+  .tab {
+    min-height: 48px; min-width: 56px; padding: 0 8px; border-radius: 12px; display: grid; justify-items: center; align-content: center; gap: 1px;
+    color: var(--muted); font-size: 18px; line-height: 1;
+  }
+  .tab span { font-size: 10px; font-weight: 700; letter-spacing: .2px; }
+  .tab.on { color: var(--navy); background: #eef1f7; }
+  .bar-tabs .tabs { flex: 1; justify-content: space-around; }
+  .bar-tabs .tab { min-width: 120px; }
   .btn:active { filter: brightness(.92); }
   .btn[disabled] { opacity: .45; }
 

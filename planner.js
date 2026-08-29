@@ -4,6 +4,14 @@ export const SLOT_KEYS = ['kahvalti', 'ara1', 'aksam', 'ara2'];
 export const DAY_NAMES = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
 export const DAY_SHORT = ['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'];
 
+/** Weekday name for the i-th day of a plan that starts on weekStart (any weekday). */
+export function dayName(weekStart, i) {
+  return DAY_NAMES[(parseISODate(weekStart).getDay() + 6 + i) % 7];
+}
+export function dayShort(weekStart, i) {
+  return DAY_SHORT[(parseISODate(weekStart).getDay() + 6 + i) % 7];
+}
+
 const MIN_EGG_DAYS = 4;
 const VARIETY_LIMIT = 3;
 
@@ -54,7 +62,7 @@ export function emptyDay() {
 }
 
 export function newPlan(weekStart) {
-  return { weekStart: mondayOf(weekStart), days: Array.from({ length: 7 }, emptyDay) };
+  return { weekStart, days: Array.from({ length: 7 }, emptyDay) };
 }
 
 export function setMeal(plan, dayIdx, slot, id) {
@@ -66,9 +74,9 @@ export function clearPlan(plan) {
   return newPlan(plan.weekStart);
 }
 
-/** Same meals, shifted to a new week start. */
+/** Same meals, shifted to a new week start (any weekday). */
 export function withWeekStart(plan, weekStart) {
-  return { ...plan, weekStart: mondayOf(weekStart) };
+  return { ...plan, weekStart };
 }
 
 export function usageCount(plan, id) {
@@ -132,7 +140,7 @@ export function hints(plan, mealsById) {
     if (!snack || !(snack.tags || []).includes('sandwichSnack')) return;
     const bf = get(d.kahvalti);
     if (bf && !(bf.tags || []).includes('bowl')) {
-      out.push({ level: 'info', dayIdx, slot: 'ara1', mealId: snack.id, text: `${DAY_NAMES[dayIdx]}: sandviç ara öğünü bowl yapılan günler için` });
+      out.push({ level: 'info', dayIdx, slot: 'ara1', mealId: snack.id, text: `${dayName(plan.weekStart, dayIdx)}: sandviç ara öğünü bowl yapılan günler için` });
     }
   });
 
@@ -155,6 +163,60 @@ export function eggDayCount(plan, mealsById) {
     const m = get(d.kahvalti);
     return m && (m.tags || []).includes('egg');
   }).length;
+}
+
+// ---------- randomize ----------
+
+/**
+ * Fill every slot with a random meal while respecting the rules that `hints` checks:
+ * maxPerWeek, at least MIN_EGG_DAYS egg breakfasts, sandwich snacks only on bowl days,
+ * no dinner VARIETY_LIMIT or more times. `rnd` is injectable for tests.
+ */
+export function randomizePlan(plan, meals, rnd = Math.random) {
+  const pick = (arr) => arr[Math.floor(rnd() * arr.length)];
+  const shuffle = (arr) => {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    return a;
+  };
+  const has = (m, t) => (m.tags || []).includes(t);
+  const bySlot = (s) => meals.filter((m) => m.slot === s);
+  const counts = new Map();
+  const canUse = (m) => !m.maxPerWeek || (counts.get(m.id) || 0) < m.maxPerWeek;
+  const use = (m) => { counts.set(m.id, (counts.get(m.id) || 0) + 1); return m.id; };
+
+  const days = Array.from({ length: 7 }, emptyDay);
+
+  // breakfasts: MIN_EGG_DAYS random days get an egg breakfast, the rest anything
+  const eggDays = new Set(shuffle([0, 1, 2, 3, 4, 5, 6]).slice(0, MIN_EGG_DAYS));
+  const bf = bySlot('kahvalti');
+  days.forEach((d, i) => {
+    const pool = bf.filter((m) => canUse(m) && (eggDays.has(i) ? has(m, 'egg') : true));
+    d.kahvalti = use(pick(pool.length ? pool : bf));
+  });
+
+  // snacks: sandwich snack only on bowl breakfast days
+  const sn = bySlot('ara1');
+  days.forEach((d) => {
+    const bowl = has(meals.find((m) => m.id === d.kahvalti), 'bowl');
+    const pool = sn.filter((m) => canUse(m) && (bowl || !has(m, 'sandwichSnack')));
+    d.ara1 = use(pick(pool.length ? pool : sn));
+  });
+
+  // dinners: no dinner VARIETY_LIMIT or more times
+  const dn = bySlot('aksam');
+  days.forEach((d) => {
+    const pool = dn.filter((m) => canUse(m) && (counts.get(m.id) || 0) < VARIETY_LIMIT - 1);
+    d.aksam = use(pick(pool.length ? pool : dn));
+  });
+
+  const ev = bySlot('ara2');
+  days.forEach((d) => {
+    const pool = ev.filter(canUse);
+    d.ara2 = use(pick(pool.length ? pool : ev));
+  });
+
+  return { ...plan, days };
 }
 
 // ---------- share link ----------

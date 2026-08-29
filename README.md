@@ -66,4 +66,4 @@ Repo on GitHub, Settings > Pages > Deploy from branch `main`, folder `/ (root)`.
 
 ## Plan storage
 
-The plan lives in the phone's localStorage. "Paylaş" produces a link with the whole plan encoded in the URL hash, open it on the other phone to import. "Yeni hafta başlat" archives the current week so "Geçen haftayı kopyala" can bring it back as a starting point.
+The plan lives in the phone's localStorage. "Paylaş" produces a link with the whole plan encoded in the URL hash, open it on the other phone to import. The ⋯ menu offers "Rastgele doldur" (fills all 28 slots at random while respecting the rules) and "Haftayı temizle". The week can start on any weekday: pick a date in the header and the plan runs seven days from it. The "Tarifler" tab browses the whole meal library by slot and category.
