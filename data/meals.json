@@ -136,7 +136,7 @@
       "maxPerWeek": 2, "tags": ["bowl"], "programs": [4]
     },
     {
-      "id": "K11", "slot": "kahvalti", "category": "sandvic-durum", "title": "Kaşar & hindi füme sandviç",
+      "id": "K11", "image": "images/K11.webp", "slot": "kahvalti", "category": "sandvic-durum", "title": "Kaşar & hindi füme sandviç",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "2 ince dilim tam buğday ekmeği arasına 2 adet kaşar peyniri + 2 adet hindi füme",
@@ -147,7 +147,7 @@
       "programs": [1]
     },
     {
-      "id": "K12", "slot": "kahvalti", "category": "sandvic-durum", "title": "Tam buğday tost",
+      "id": "K12", "image": "images/K12.webp", "slot": "kahvalti", "category": "sandvic-durum", "title": "Tam buğday tost",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "2 ince dilim tam buğday ekmeği arasına 2 kare ince dilim kaşar + 2 adet hindi füme",
@@ -158,7 +158,7 @@
       "programs": [2]
     },
     {
-      "id": "K13", "slot": "kahvalti", "category": "sandvic-durum", "title": "Chia tohumlu krep dürüm",
+      "id": "K13", "image": "images/K13.webp", "slot": "kahvalti", "category": "sandvic-durum", "title": "Chia tohumlu krep dürüm",
       "lines": [
         "İçine 1 yemek kaşığı dolusu labne + 2 adet hindi füme + 2 yaprak marul + domates, dürüm yap",
         "Tarif kartına bak"
@@ -166,7 +166,7 @@
       "recipe": "recipes/chiali-krep-durum.jpg", "programs": [2]
     },
     {
-      "id": "K14", "slot": "kahvalti", "category": "sandvic-durum", "title": "Keten tohumlu krep dürüm",
+      "id": "K14", "image": "images/K14.webp", "slot": "kahvalti", "category": "sandvic-durum", "title": "Keten tohumlu krep dürüm",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "1 yemek kaşığı labne + 2 adet hindi füme + marul ile dürüm",
@@ -175,7 +175,7 @@
       "recipe": "recipes/keten-tohumlu-krep-durum.jpg", "programs": [4]
     },
     {
-      "id": "K15", "slot": "kahvalti", "category": "sandvic-durum", "title": "Tuzlu pankekler",
+      "id": "K15", "image": "images/K15.webp", "slot": "kahvalti", "category": "sandvic-durum", "title": "Tuzlu pankekler",
       "lines": [
         "1 silme yemek kaşığı labne",
         "1 kibrit kutusu büyüklüğünde beyaz peynir",
@@ -187,27 +187,27 @@
     },
 
     {
-      "id": "T1", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, şeftali ve tohum",
+      "id": "T1", "image": "images/T1.webp", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, şeftali ve tohum",
       "lines": ["4 yemek kaşığı yoğurt", "1 adet küçük boy şeftali", "1 yemek kaşığı keten veya chia tohumu"],
       "programs": [1, 3]
     },
     {
-      "id": "T2", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, elma ve tahin",
+      "id": "T2", "image": "images/T2.webp", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, elma ve tahin",
       "lines": ["4 yemek kaşığı yoğurt", "1 orta boy elma küp küp", "1 tatlı kaşığı tahin veya şekersiz fıstık ezmesi", "Tarçın"],
       "programs": [1]
     },
     {
-      "id": "T3", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, chia, orman meyvesi ve ezme",
+      "id": "T3", "image": "images/T3.webp", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, chia, orman meyvesi ve ezme",
       "lines": ["4 yemek kaşığı yoğurt", "1 yemek kaşığı chia tohumu", "1 su bardağı orman meyvesi", "1 tatlı kaşığı fıstık ezmesi veya tahin"],
       "programs": [2]
     },
     {
-      "id": "T4", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, chia ve orman meyvesi",
+      "id": "T4", "image": "images/T4.webp", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, chia ve orman meyvesi",
       "lines": ["4 yemek kaşığı yoğurt", "1 yemek kaşığı chia tohumu", "1 avuç orman meyvesi"],
       "programs": [4]
     },
     {
-      "id": "T5", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, keten tohumu ve incir",
+      "id": "T5", "image": "images/T5.webp", "slot": "ara1", "category": "yogurtlu", "title": "Yoğurt, keten tohumu ve incir",
       "lines": ["4 yemek kaşığı yoğurt", "1 yemek kaşığı keten tohumu", "2 adet küçük boy incir"],
       "programs": [4]
     },
