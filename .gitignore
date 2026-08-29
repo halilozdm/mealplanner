@@ -2,3 +2,6 @@ docs/
 node_modules/
 .DS_Store
 Thumbs.db
+images/*.jpg
+images/*.jpeg
+images/*.png

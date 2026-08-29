@@ -4,7 +4,7 @@ import {
   hints, eggDayCount, encodePlan, decodePlan, randomizePlan,
 } from './planner.js';
 
-const VERSION = '1'; // bump when data/*.json changes, busts the fetch cache
+const VERSION = '2'; // bump when data/*.json changes, busts the fetch cache
 const LS_PLAN = 'mealplanner.plan';
 
 const app = document.getElementById('app');
@@ -113,7 +113,8 @@ function renderHome() {
       body = `<div class="rows">${SLOT_KEYS.map((s, j) => {
         const m = d[s] ? byId.get(d[s]) : null;
         const bad = m && (overIds.has(m.id) || hs.some((h) => h.dayIdx === i && h.slot === s));
-        return `<div class="row ${m ? 'on' : ''} ${bad ? 'bad' : ''}" style="--i:${j}"><b>${esc(slotMeta(s).short)}</b>${m ? `<span>${esc(m.title)}</span>` : '<span class="empty">—</span>'}</div>`;
+        const pic = m?.image ? `<img class="pic" src="${esc(m.image)}" alt="" loading="lazy" width="36" height="36">` : '';
+        return `<div class="row ${m ? 'on' : ''} ${bad ? 'bad' : ''}" style="--i:${j}"><b>${esc(slotMeta(s).short)}</b>${m ? `<span>${esc(m.title)}</span>` : '<span class="empty">—</span>'}${pic}</div>`;
       }).join('')}</div>`;
     }
     return `<button class="day rise ${n === 4 ? 'done' : ''} ${n === 0 ? 'blank' : ''}" data-day="${i}" style="--i:${i}">
@@ -204,7 +205,7 @@ function mealCard(m, i, { selected = false, use = '', hint = null } = {}) {
   const isOpen = openMeal === m.id;
   const lines = m.lines.map((l, k) => `<li class="${k >= 2 && !isOpen ? 'hidden' : ''}">${esc(l)}</li>`).join('');
   const more = m.lines.length > 2 ? `<span class="more" data-more="${m.id}">${isOpen ? 'Daha az' : `+${m.lines.length - 2} satır`} ${icon('down')}</span>` : '<span></span>';
-  const visual = m.recipe ? `<img class="thumb" src="${esc(m.recipe)}" alt="" loading="lazy">` : `<div class="tile">${esc(m.id)}</div>`;
+  const visual = m.image ? `<img class="thumb" src="${esc(m.image)}" alt="" loading="lazy" width="84" height="84">` : `<div class="tile">${esc(m.id)}</div>`;
   return `<button class="meal rise ${selected ? 'sel' : ''} ${isOpen ? 'open' : ''}" data-id="${m.id}" style="--i:${Math.min(i, 8)}">
     ${visual}
     <div class="body">
@@ -342,12 +343,14 @@ function renderRecipe(id) {
       <h1>Tarif</h1>
     `)}
     <main>
-      <img class="recipe-img rise" src="${esc(m.recipe)}" alt="${esc(m.title)} tarifi">
-      <div class="recipe-card rise" style="--i:2">
+      ${m.image ? `<img class="hero rise" src="${esc(m.image)}" alt="${esc(m.title)}">` : ''}
+      <div class="recipe-card rise" style="--i:1">
         <div class="eyebrow">${esc(m.id)} · ${esc(slotMeta(m.slot).label)}</div>
         <h2>${esc(m.title)}</h2>
         <ul>${m.lines.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>
       </div>
+      <div class="eyebrow-sec rise" style="--i:2">Diyetisyenin tarif kartı</div>
+      <img class="recipe-img rise" style="--i:3" src="${esc(m.recipe)}" alt="${esc(m.title)} tarifi" loading="lazy">
     </main>`;
   app.querySelector('#back').addEventListener('click', () => history.back());
 }

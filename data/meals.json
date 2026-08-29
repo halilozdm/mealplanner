@@ -31,7 +31,7 @@
   },
   "meals": [
     {
-      "id": "K1", "slot": "kahvalti", "category": "yumurtali", "title": "Kahvaltı tabağı",
+      "id": "K1", "image": "images/K1.webp", "slot": "kahvalti", "category": "yumurtali", "title": "Kahvaltı tabağı",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "2 adet haşlanmış yumurta veya 2 yumurtadan sade omlet",
@@ -45,7 +45,7 @@
       "tags": ["egg"], "programs": [1, 2, 3, 4]
     },
     {
-      "id": "K2", "slot": "kahvalti", "category": "yumurtali", "title": "Avokado & yumurta",
+      "id": "K2", "image": "images/K2.webp", "slot": "kahvalti", "category": "yumurtali", "title": "Avokado & yumurta",
       "lines": [
         "2 wasa / 2 karabuğday patlağı / 1 ince dilim tam buğday ekmeği üzerine hazırlanacak",
         "5-6 adet zeytin / 2 adet ceviz içi",
@@ -55,7 +55,7 @@
       "maxPerWeek": 2, "tags": ["egg"], "recipe": "recipes/avokado-yumurta.jpg", "programs": [1, 3]
     },
     {
-      "id": "K3", "slot": "kahvalti", "category": "yumurtali", "title": "Sebzeli omlet",
+      "id": "K3", "image": "images/K3.webp", "slot": "kahvalti", "category": "yumurtali", "title": "Sebzeli omlet",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "2 yumurta + 1 tatlı kaşığı zeytinyağı + mantar / kabak / biber / domates / maydanoz-dereotu ile omlet",
@@ -67,7 +67,7 @@
       "maxPerWeek": 2, "tags": ["egg"], "programs": [1]
     },
     {
-      "id": "K4", "slot": "kahvalti", "category": "yumurtali", "title": "Lor peynirli omlet",
+      "id": "K4", "image": "images/K4.webp", "slot": "kahvalti", "category": "yumurtali", "title": "Lor peynirli omlet",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "2 yumurta + 3 yemek kaşığı lor peyniri + 1 tatlı kaşığı zeytinyağı ile omlet (maydanoz, dereotu eklenebilir)",
@@ -78,7 +78,7 @@
       "maxPerWeek": 2, "tags": ["egg"], "programs": [2, 4]
     },
     {
-      "id": "K5", "slot": "kahvalti", "category": "yumurtali", "title": "Keten tohumlu omlet",
+      "id": "K5", "image": "images/K5.webp", "slot": "kahvalti", "category": "yumurtali", "title": "Keten tohumlu omlet",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "2 yumurta + 1 tatlı kaşığı zeytinyağı + 1 yemek kaşığı keten tohumu ile omlet",

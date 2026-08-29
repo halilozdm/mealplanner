@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import {
   mondayOf, addDays, weekLabel, newPlan, setMeal, usageCount, filledCount,
   hints, eggDayCount, encodePlan, decodePlan, isValidPlan, SLOT_KEYS,
@@ -21,6 +21,9 @@ test('meals.json integrity', () => {
     assert.ok(m.title && m.lines.length > 0, `${m.id} missing title/lines`);
     const prefix = data.slots.find((s) => s.key === m.slot).prefix;
     assert.ok(m.id.startsWith(prefix), `${m.id} prefix should be ${prefix}`);
+    for (const k of ['image', 'recipe']) {
+      if (m[k]) assert.ok(existsSync(new URL('../' + m[k], import.meta.url)), `${m.id} ${k} file missing: ${m[k]}`);
+    }
   }
   // every category has at least one meal
   for (const slot of SLOT_KEYS) {

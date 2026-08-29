@@ -67,3 +67,7 @@ Repo on GitHub, Settings > Pages > Deploy from branch `main`, folder `/ (root)`.
 ## Plan storage
 
 The plan lives in the phone's localStorage. "Paylaş" produces a link with the whole plan encoded in the URL hash, open it on the other phone to import. The ⋯ menu offers "Rastgele doldur" (fills all 28 slots at random while respecting the rules) and "Haftayı temizle". The week can start on any weekday: pick a date in the header and the plan runs seven days from it. The "Tarifler" tab browses the whole meal library by slot and category.
+
+## Meal images
+
+Drop AI-generated meal photos into `images/` named by meal id (`K1.jpg`, `D3.png`, case-insensitive), then run `npm i --no-save sharp && node scripts/optimize-images.mjs`. It writes `images/<ID>.webp` (600px) and adds `"image"` to the meal in `data/meals.json`; bump `VERSION` in `app.js` afterwards. Originals are gitignored, only the WebP files are committed. Prompts live in `docs/image-prompts.md` (generated from `docs/image-prompts.json`).
