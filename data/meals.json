@@ -90,7 +90,7 @@
       "maxPerWeek": 2, "tags": ["egg"], "programs": [3]
     },
     {
-      "id": "K6", "slot": "kahvalti", "category": "yumurtali", "title": "Sebzeli yulaf börek",
+      "id": "K6", "image": "images/K6.webp", "slot": "kahvalti", "category": "yumurtali", "title": "Sebzeli yulaf börek",
       "lines": [
         "2 kibrit kutusu büyüklüğünde beyaz peynir",
         "5-6 adet zeytin / 2 adet ceviz içi",
@@ -100,7 +100,7 @@
       "tags": ["egg"], "recipe": "recipes/sebzeli-yulaf-borek.jpg", "programs": [2, 4]
     },
     {
-      "id": "K7", "slot": "kahvalti", "category": "bowl", "title": "Orman meyveli muzlu bowl",
+      "id": "K7", "image": "images/K7.webp", "slot": "kahvalti", "category": "bowl", "title": "Orman meyveli muzlu bowl",
       "lines": [
         "4 yemek kaşığı yoğurt içine 2 yemek kaşığı chia tohumu + 1 tatlı kaşığı bal, geceden buzdolabında dinlendir",
         "Sabah üzerine ½ orta boy muz + 1 küçük su bardağı orman meyvesi",
@@ -109,7 +109,7 @@
       "maxPerWeek": 2, "tags": ["bowl"], "programs": [1]
     },
     {
-      "id": "K8", "slot": "kahvalti", "category": "bowl", "title": "Bağırsak dostu bowl",
+      "id": "K8", "image": "images/K8.webp", "slot": "kahvalti", "category": "bowl", "title": "Bağırsak dostu bowl",
       "lines": [
         "Siyah açık çay (şekersiz)",
         "4 yemek kaşığı yoğurt içine 2 yemek kaşığı chia tohumu + 1 tatlı kaşığı bal, geceden dinlendir",
@@ -118,7 +118,7 @@
       "tags": ["bowl"], "programs": [2]
     },
     {
-      "id": "K9", "slot": "kahvalti", "category": "bowl", "title": "Tiramisu tadında yulaf bowl",
+      "id": "K9", "image": "images/K9.webp", "slot": "kahvalti", "category": "bowl", "title": "Tiramisu tadında yulaf bowl",
       "lines": [
         "5 yemek kaşığı yoğurt + 2 yemek kaşığı yulaf ezmesi + 2 yemek kaşığı chia + 1 shot kahve, en az 1 saat buzdolabında",
         "Yemeden önce 1 orta boy muz ezilerek eklenir, üzerine kakao",
@@ -127,7 +127,7 @@
       "tags": ["bowl"], "recipe": "recipes/tiramisu-yulaf-bowl.jpg", "programs": [3]
     },
     {
-      "id": "K10", "slot": "kahvalti", "category": "bowl", "title": "Ödem atıcı ananas bowl",
+      "id": "K10", "image": "images/K10.webp", "slot": "kahvalti", "category": "bowl", "title": "Ödem atıcı ananas bowl",
       "lines": [
         "4 yemek kaşığı yoğurt içine 2 yemek kaşığı chia tohumu + 1 tatlı kaşığı bal, geceden buzdolabında bekletilecek",
         "Sabah üzerine 2 parmak kalınlığında 1 halka dilim ananas doğranacak",
